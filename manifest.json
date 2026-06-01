@@ -1,0 +1,26 @@
+{
+  "name": "ER Assessment Pocket Guide",
+  "short_name": "ER Guide",
+  "description": "BCIT Emergency Nursing Specialty Assessment Framework — offline reference",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f6f9",
+  "theme_color": "#1a3a5c",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='32' fill='%231a3a5c'/%3E%3Cpath d='M96 40 C96 40 60 68 60 100 C60 120 76 136 96 136 C116 136 132 120 132 100 C132 68 96 40 96 40Z' fill='%23c0392b'/%3E%3Crect x='88' y='58' width='16' height='60' rx='8' fill='white'/%3E%3Crect x='66' y='80' width='60' height='16' rx='8' fill='white'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='80' fill='%231a3a5c'/%3E%3Cpath d='M256 100 C256 100 160 172 160 256 C160 308 204 352 256 352 C308 352 352 308 352 256 C352 172 256 100 256 100Z' fill='%23c0392b'/%3E%3Crect x='236' y='148' width='40' height='164' rx='20' fill='white'/%3E%3Crect x='172' y='212' width='168' height='40' rx='20' fill='white'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["medical", "education"],
+  "lang": "en"
+}
