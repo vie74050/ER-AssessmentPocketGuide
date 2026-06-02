@@ -27,10 +27,10 @@
         --radius: 12px;
         --shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
         /* safe area insets for notched phones */
-        --sat: env(safe-area-inset-top, 0px);
-        --sab: env(safe-area-inset-bottom, 0px);
-        --sal: env(safe-area-inset-left, 0px);
-        --sar: env(safe-area-inset-right, 0px);
+        --sat: env(safe-area-inset-top, 5px);
+        --sab: env(safe-area-inset-bottom, 5px);
+        --sal: env(safe-area-inset-left, 5px);
+        --sar: env(safe-area-inset-right, 5px);
       }
 
       * {
@@ -110,8 +110,6 @@
       #search-results {
         position: fixed;
         top: calc(120px + var(--sat));
-        left: 0;
-        right: 0;
         margin: auto;
         background: var(--bg);
         padding: 14px 18px;
@@ -826,19 +824,15 @@
             line-height: 1.65;
         }
         html {          
-          font-size: 24px; 
+          font-size: 20px; 
         }
-        body {
-          background: white;
-        }
-
         header {
           padding: calc(16px + var(--sat)) 20px 14px;
         }
 
         nav button svg {
-          width: 42px;
-          height: 42px;
+          width: 36px;
+          height: 36px;
         }
         
       }
@@ -2673,9 +2667,6 @@
 
     </div>
 
-    <div style="position:fixed;top:0;left:0;background:black;color:white;z-index:9999;padding:4px;">
-      <script>document.write(window.innerWidth);</script>
-    </div>
     <script>
       // ── VIEW MANAGEMENT ──────────────────────────────────────────────────────────
       function showView(id, btn) {
