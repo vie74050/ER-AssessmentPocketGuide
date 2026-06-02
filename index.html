@@ -46,11 +46,6 @@
         background: white;
       }
 
-      body, header, nav {
-        max-width: 600px;
-        margin: auto;
-      }
-
       body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         background: var(--bg);
@@ -821,10 +816,12 @@
           --shadow: 0 4px 12px rgba(0,0,0,0.12);
         }
 
-        html {
+        html {          
           font-size: 18px; /* or 19–20px if you want a true native feel */
         }
         body {
+          width: 100%;
+          max-width: 100vw;
           line-height: 1.65;
           padding-bottom: calc(90px + var(--sab)); /* more breathing room */
         }
@@ -833,6 +830,13 @@
           padding: calc(16px + var(--sat)) 20px 14px;
         }
         
+      }
+
+      @media (min-width: 850px) {
+        body, header, nav {
+          max-width: 850px;
+          margin: auto;
+        }
       }
     </style>
   </head>
@@ -873,14 +877,14 @@
         </svg>
         Secondary
       </button>
-      <button onclick="showView('calcs',this)">
+      <button onclick="showView('tools',this)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <rect x="4" y="2" width="16" height="20" rx="2" />
           <line x1="8" y1="6" x2="16" y2="6" />
           <line x1="8" y1="10" x2="16" y2="10" />
           <line x1="8" y1="14" x2="12" y2="14" />
         </svg>
-        Calc
+        Tools
       </button>
       <button onclick="showView('reference',this)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -908,9 +912,9 @@
             <span class="label">Secondary Assessment</span>
             <span class="sub">LOTARP · Head-to-Toe</span>
           </button>
-          <button class="quick-btn" onclick="showView('calcs',document.querySelectorAll('nav button')[3])">
-            <span class="icon">🧮</span>
-            <span class="label">Calculators</span>
+          <button class="quick-btn" onclick="showView('tools',document.querySelectorAll('nav button')[3])">
+            <span class="icon">🛠️</span>
+            <span class="label">Tools</span>
             <span class="sub">Burns · GCS · Parkland</span>
           </button>
           <button class="quick-btn" onclick="showView('reference',document.querySelectorAll('nav button')[4])">
@@ -1021,7 +1025,7 @@
       <div id="tab-adult-primary">
 
         <div class="card strip-red">
-          <div class="card-header open" onclick="toggleCard(this)">
+          <div class="card-header" onclick="toggleCard(this)">
             <h2>&lt;C&gt; CPR / Hemorrhage</h2>
             <div><span class="badge red">First</span><svg
                 class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1029,7 +1033,7 @@
                 <polyline points="6 9 12 15 18 9" />
               </svg></div>
           </div>
-          <div class="card-body open">
+          <div class="card-body">
             <div class="step">
               <h3>Assess</h3>
               <ul>
@@ -1263,7 +1267,7 @@
       <!-- PEDS PAT -->
       <div id="tab-peds-pat" style="display:none">
         <div class="card strip-purple">
-          <div class="card-header open" onclick="toggleCard(this)">
+          <div class="card-header" onclick="toggleCard(this)">
             <h2>👶 PAT — Pediatric Assessment Triangle</h2>
             <div><span class="badge"
                 style="background:#ede9fe;color:#7c3aed">Peds Only</span><svg class="chevron" width="16" height="16"
@@ -1272,7 +1276,7 @@
                 <polyline points="6 9 12 15 18 9" />
               </svg></div>
           </div>
-          <div class="card-body open">
+          <div class="card-body">
             <div class="step">
               <h3>Appearance — TICLS</h3>
               <ul>
@@ -1332,7 +1336,7 @@
       <!-- ADVANCED -->
       <div id="tab-advanced" style="display:none">
         <div class="card strip-red">
-          <div class="card-header open" onclick="toggleCard(this)">
+          <div class="card-header" onclick="toggleCard(this)">
             <h2>Advanced C — Circulation</h2>
             <div><span class="badge red">Advanced</span><svg
                 class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1340,7 +1344,7 @@
                 <polyline points="6 9 12 15 18 9" />
               </svg></div>
           </div>
-          <div class="card-body open">
+          <div class="card-body">
             <div class="step">
               <h3>Additional Assessments</h3>
               <ul>
@@ -1511,14 +1515,14 @@
       <!-- HEAD TO TOE -->
       <div id="tab-headtoe" style="display:none">
         <div class="card strip-blue">
-          <div class="card-header open" onclick="toggleCard(this)">
+          <div class="card-header" onclick="toggleCard(this)">
             <h2>General Appearance</h2>
             <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2.5" style="transform:rotate(180deg)">
               <polyline points="6 9 12 15 18 9" />
             </svg>
           </div>
-          <div class="card-body open">
+          <div class="card-body">
             <div class="step">
               <ul>
                 <li>Affect, behaviour, hygiene</li>
@@ -1681,14 +1685,14 @@
       <!-- LOTARP -->
       <div id="tab-lotarp">
         <div class="card strip-blue">
-          <div class="card-header open" onclick="toggleCard(this)">
+          <div class="card-header" onclick="toggleCard(this)">
             <h2>LOTARP — History of Presenting Illness</h2>
             <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2.5" style="transform:rotate(180deg)">
               <polyline points="6 9 12 15 18 9" />
             </svg>
           </div>
-          <div class="card-body open">
+          <div class="card-body">
             <div class="mnemonic-grid">
               <div class="mnemonic-item">
                 <div class="mnemonic-letter">L</div>
@@ -1800,14 +1804,14 @@
       <!-- CIAMPEDS -->
       <div id="tab-ciampeds" style="display:none">
         <div class="card strip-purple">
-          <div class="card-header open" onclick="toggleCard(this)">
+          <div class="card-header" onclick="toggleCard(this)">
             <h2>👶 CIAMPEDS — Pediatric History</h2>
             <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2.5" style="transform:rotate(180deg)">
               <polyline points="6 9 12 15 18 9" />
             </svg>
           </div>
-          <div class="card-body open">
+          <div class="card-body">
             <div class="mnemonic-grid">
               <div class="mnemonic-item">
                 <div class="mnemonic-letter">C</div>
@@ -1892,14 +1896,14 @@
       <!-- FOCUSED SYSTEMS -->
       <div id="tab-focused" style="display:none">
         <div class="card strip-red">
-          <div class="card-header open" onclick="toggleCard(this)">
+          <div class="card-header" onclick="toggleCard(this)">
             <h2>❤️ Cardiovascular</h2>
             <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2.5" style="transform:rotate(180deg)">
               <polyline points="6 9 12 15 18 9" />
             </svg>
           </div>
-          <div class="card-body open">
+          <div class="card-body">
             <div class="step">
               <h3>Inspect</h3>
               <ul>
@@ -2104,7 +2108,7 @@
       <!-- JOURNEY -->
       <div id="tab-journey" style="display:none">
         <div class="card strip-green">
-          <div class="card-header open" onclick="toggleCard(this)">
+          <div class="card-header" onclick="toggleCard(this)">
             <h2>🚀 Journey</h2>
             <div><span class="badge green">Final Step</span><svg
                 class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -2112,7 +2116,7 @@
                 <polyline points="6 9 12 15 18 9" />
               </svg></div>
           </div>
-          <div class="card-body open">
+          <div class="card-body">
             <div class="step note">
               <p>An ever-evolving process. Prioritize short &amp; long-term clinical goals systematically.</p>
             </div>
@@ -2154,18 +2158,18 @@
     </div>
 
     <!-- ═══════════════════════════════ CALCULATORS ═══════════════════════════════ -->
-    <div id="view-calcs" class="view">
+    <div id="view-tools" class="view">
 
       <!-- GCS -->
       <div class="card strip-blue">
-        <div class="card-header open" onclick="toggleCard(this)">
+        <div class="card-header" onclick="toggleCard(this)">
           <h2>🧠 GCS Calculator</h2>
           <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2.5" style="transform:rotate(180deg)">
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </div>
-        <div class="card-body open">
+        <div class="card-body">
           <div class="calc-box">
             <h3>Eye Opening (E)</h3>
             <div id="gcs-E" style="margin-bottom:10px">
@@ -2352,14 +2356,14 @@
 
       <!-- AEIOUTIPS -->
       <div class="card strip-amber">
-        <div class="card-header open" onclick="toggleCard(this)">
+        <div class="card-header" onclick="toggleCard(this)">
           <h2>🧠 AEIOUTIPS — Altered LOC</h2>
           <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2.5" style="transform:rotate(180deg)">
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </div>
-        <div class="card-body open">
+        <div class="card-body">
           <div class="aeiou-grid">
             <div class="aeiou-letter">A</div>
             <div class="aeiou-terms">Alcohols · Acidosis · Ammonia · Arrhythmias</div>
@@ -2722,11 +2726,11 @@
         { title: 'Abdominal Focused Assessment', section: 'Secondary', keywords: ['abdominal', 'abdomen', 'bowel', 'guarding', 'rigidity', 'cva', 'palpate'] },
         { title: 'Musculoskeletal / Integumentary', section: 'Secondary', keywords: ['musculoskeletal', 'msk', 'integumentary', 'skin', 'compartment', '6p'] },
         { title: 'Journey — Treatment & Disposition', section: 'Secondary', keywords: ['journey', 'disposition', 'transfer', 'discharge', 'diagnostics', 'planning'] },
-        { title: 'GCS Calculator', section: 'Calculators', keywords: ['gcs', 'glasgow', 'coma', 'scale', 'eye', 'verbal', 'motor', 'score'] },
-        { title: 'Burns Calculator — Parkland Formula', section: 'Calculators', keywords: ['burns', 'parkland', 'tbsa', 'fluid', 'resuscitation', 'burn'] },
-        { title: 'Pediatric Weight & Fluid Estimates', section: 'Calculators', keywords: ['pediatric', 'weight', 'bolus', 'fluid', 'peds', 'estimate'] },
-        { title: 'Cardiac Output Calculator', section: 'Calculators', keywords: ['cardiac', 'output', 'co', 'heart rate', 'stroke volume', 'hr', 'sv'] },
-        { title: 'Pain Scale Reference', section: 'Calculators', keywords: ['pain', 'nrs', 'scale', 'score'] },
+        { title: 'GCS Calculator', section: 'Tools', keywords: ['gcs', 'glasgow', 'coma', 'scale', 'eye', 'verbal', 'motor', 'score'] },
+        { title: 'Burns Calculator — Parkland Formula', section: 'Tools', keywords: ['burns', 'parkland', 'tbsa', 'fluid', 'resuscitation', 'burn'] },
+        { title: 'Pediatric Weight & Fluid Estimates', section: 'Tools', keywords: ['pediatric', 'weight', 'bolus', 'fluid', 'peds', 'estimate'] },
+        { title: 'Cardiac Output Calculator', section: 'Tools', keywords: ['cardiac', 'output', 'co', 'heart rate', 'stroke volume', 'hr', 'sv'] },
+        { title: 'Pain Scale Reference', section: 'Tools', keywords: ['pain', 'nrs', 'scale', 'score'] },
         { title: 'AEIOUTIPS — Altered LOC', section: 'Reference', keywords: ['aeioutips', 'altered', 'loc', 'consciousness', 'alcohols', 'infection', 'overdose', 'seizure', 'stroke', 'syncope'] },
         { title: 'AVPU Scale', section: 'Reference', keywords: ['avpu', 'alert', 'verbal', 'pain', 'unresponsive'] },
         { title: 'Pediatric Vital Sign Norms (PEWS)', section: 'Reference', keywords: ['pews', 'pediatric', 'vitals', 'vital signs', 'heart rate', 'rr', 'bp', 'norms'] },
@@ -2743,7 +2747,7 @@
       ];
 
       const navMapping = {
-        'Primary': 1, 'Secondary': 2, 'Calculators': 3, 'Reference': 4,
+        'Primary': 1, 'Secondary': 2, 'Tools': 3, 'Reference': 4,
         'Primary/Advanced': 1, 'Primary/Peds': 1
       };
 
@@ -2786,7 +2790,7 @@
       function goToSection(section) {
         const navBtns = document.querySelectorAll('nav button');
         const idx = navMapping[section] || 0;
-        const views = ['home', 'primary', 'secondary', 'calcs', 'reference'];
+        const views = ['home', 'primary', 'secondary', 'tools', 'reference'];
         showView(views[idx], navBtns[idx]);
         document.getElementById('searchInput').value = '';
         document.getElementById('search-results').style.display = 'none';
