@@ -817,7 +817,7 @@
         }
 
         html {          
-          font-size: 18px; /* or 19–20px if you want a true native feel */
+          font-size: 20px; 
         }
         body {
           width: 100%;
@@ -829,6 +829,11 @@
         header {
           padding: calc(16px + var(--sat)) 20px 14px;
         }
+
+        nav button svg {
+          width: 36px;
+          height: 36px;
+        }
         
       }
 
@@ -838,30 +843,7 @@
           margin: auto;
         }
       }
-      @media screen {
-        html {
-          font-size: 18px;
-          line-height: 1.65;
-          -webkit-text-size-adjust: 100%;
-        }
 
-        body, header, nav {
-          padding: 16px;
-          max-width: 100%;
-          overflow-x: hidden;
-        }
-
-        h1, h2, h3 {
-          font-weight: 600;
-          letter-spacing: 0.01em;
-        }
-
-        .card, .section {
-          border-radius: 14px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-          padding: 18px 20px;
-        }
-      }
     </style>
   </head>
 
