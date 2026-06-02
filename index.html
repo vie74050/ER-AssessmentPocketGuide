@@ -110,7 +110,6 @@
         top: calc(120px + var(--sat));
         left: 0;
         right: 0;
-        max-width: 1024px;
         margin: auto;
         background: var(--bg);
         padding: 14px 18px;
@@ -140,7 +139,6 @@
         border: none;
         background: none;
         padding: 10px 2px 8px;
-        font-size: 1rem;
         color: var(--muted);
         cursor: pointer;
         display: flex;
@@ -827,35 +825,7 @@
         header {
           padding: calc(16px + var(--sat)) 20px 14px;
         }
-
-        header h1 {
-          font-size: 1.3rem;
-          letter-spacing: 0.01em;
-        }
-        .card {
-          padding: 18px 20px;
-          border-radius: 14px;
-        }
-
-        .card h2 {
-          font-size: 1.25rem;
-          margin-bottom: 12px;
-        }
-
-        .card p,
-        .card li {
-          font-size: 1.05rem;
-          margin-bottom: 10px;
-        }
-        nav {
-          height: 72px;
-          padding: 10px 0;
-        }
-
-        nav a {
-          font-size: 1.05rem;
-          padding: 12px 0;
-        }
+        
       }
     </style>
   </head>
@@ -2687,6 +2657,9 @@
 
     </div>
 
+    <div style="position:fixed;top:0;left:0;background:black;color:white;z-index:9999;padding:4px;">
+      <script>document.write(window.innerWidth);</script>
+    </div>
     <script>
       // ── VIEW MANAGEMENT ──────────────────────────────────────────────────────────
       function showView(id, btn) {
