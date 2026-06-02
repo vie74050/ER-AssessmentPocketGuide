@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+    <meta name="viewport" content="width=400, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="description" content="BCIT Emergency Nursing Specialty — Assessment Framework Pocket Reference">
@@ -810,19 +810,20 @@
         line-height: 1.4;
       }
 
-      @media (hover: none) and (max-width: 400px) {
+      @media (hover: none) and (max-width: 900px) {
         :root {
           --radius: 14px;
           --shadow: 0 4px 12px rgba(0,0,0,0.12);
         }
 
         html {          
-          font-size: 20px; 
+          font-size: 22px; 
         }
         body {
           width: 100%;
           max-width: 100vw;
           line-height: 1.65;
+          background: white;
           padding-bottom: calc(90px + var(--sab)); /* more breathing room */
         }
 
@@ -837,11 +838,11 @@
         
       }
 
-      @media (min-width: 850px) {
+      
         body, header, nav {
-          max-width: 850px;
+          max-width: 450px;
           margin: auto;
-        }
+        
       }
 
     </style>
