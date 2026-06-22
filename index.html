@@ -39,14 +39,16 @@
         margin: 0;
         padding: 0;
       }
-
+      #ecgIntervalsIframe html {
+        height: 300px; overflow: hidden;
+      }
       html {
         -webkit-text-size-adjust: 100%;
         text-size-adjust: 100%;
         width: 100%;
         background: white;
       }
-
+      
       body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         background: var(--bg);
@@ -2553,7 +2555,7 @@
         <div class="card-body">
           <div class="desktop-only" style="height: 570px; overflow: hidden;">
             <iframe 
-            title="Oxygen Dissociation Curve" 
+            title="Oxygen-Hemoglobin Dissociation Curve" 
             src="https://learn.bcit.ca/d2l/lor/viewer/viewFile.d2lfile/6605/48483/index.html?ou=6605" 
             data-contenttype="html"
             align="center" 
@@ -2656,15 +2658,17 @@
             <div class="desktop-only" style="height: 200px; overflow: hidden;">
             <p>Hover over each interval to see details.</p>
             <iframe 
+              id="ecgIntervalsIframe"
               title="ECG Intervals" 
               src="https://vie74050.github.io/NSCC_iBooksWidgets/ECGTable_HTML5/" 
               data-contenttype="html"
               align="center" 
               allowfullscreen=""  
               height="600px"
-              width="1024px"
+              width="1077px"
               style="
                 margin: 0 auto;
+                height: 280px;
                 overflow:hidden;
                 translate: 0 -70px;
                 transform: scale(.85);
